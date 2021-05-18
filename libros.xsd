@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="libro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="titulo" />
+        <xs:element ref="capitulos" />
+        <xs:element ref="contenidos" />
+      </xs:sequence>
+      <xs:attribute name="Id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="[L][0-9]{4}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="tipo_clase" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="novela" />
+            <xs:enumeration value="infantil" />
+            <xs:enumeration value="didáctico" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="numero_paginas" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capitulos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="capitulo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capitulo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="titulo" />
+        <xs:element ref="indice" />
+        <xs:element ref="sinopsis" />
+        <xs:element ref="contenido_Capitulo" />
+      </xs:sequence>
+      <xs:attribute name="numero_paginas" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contenidos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="contenido" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="titulo" type="xs:string" />
+  <xs:element name="indice" type="xs:string" />
+  <xs:element name="sinopsis" type="xs:string" />
+  <xs:element name="contenido_Capitulo">
+    <xs:complexType>
+      <xs:attribute name="enlace" type="xs:IDREF" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contenido">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="Id" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:ID">
+                <xs:minLength value="4" />
+                <xs:maxLength value="20" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

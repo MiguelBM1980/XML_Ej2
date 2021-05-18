@@ -1,0 +1,35 @@
+<!--
+Vamos a elaborar una estructura de base de datos en XML que permita almacenar los datos de una biblioteca en la red. Para ello se pide que elabores
+un DTD que permita validar los documentos XML con las siguientes características:
+Existen tres tipos de documentos almacenados en la biblioteca: libros, revistas y periódicos. Todos los documentos están identificados por el
+atributo Id.
+Para los periódicos este atributo empieza por la letra “P” seguido de los 4 dígitos identificativos.
+Los periódicos se clasifican en nacionales e internacionales. Cada periódico contiene el atributo tipo_clase identificativo de la clase a la que
+pertenece y un atributo que incluye la fecha de publicación.
+Dentro de los periódicos tenemos secciones y un índice. Cada sección debe contener un atributo identificativo del tipo de sección, que puede
+ser: económica, opinión, deportes, nacional o internacional. Las secciones se dividen en artículos, en donde se define en un atributo el autor.
+Finalmente, el contenido será el último elemento del árbol, que necesita un atributo que referencie a la información.
+-->
+
+<!ELEMENT periodico (indice,secciones,contenido+) >
+<!ELEMENT indice (#PCDATA)>
+<!ELEMENT secciones (seccion+) >
+<!ELEMENT seccion (articulos) >
+<!ELEMENT articulos (articulo+) >
+<!ELEMENT articulo (#PCDATA)>
+<!ELEMENT contenido (#PCDATA) >
+
+
+
+<!ATTLIST periodico Id ID #REQUIRED> <!-- Falta formato-->
+<!ATTLIST periodico tipo_clase (nacionales | internacionales) #REQUIRED>
+
+<!ATTLIST periodico fecha_publicacion CDATA #REQUIRED >
+<!ATTLIST seccion tipo (económica | opinión | deportes | nacional | internacional) #REQUIRED>
+<!ATTLIST articulo enlace IDREF #REQUIRED> <!-- referencia a contenido-->
+<!ATTLIST contenido enlace CDATA #REQUIRED>
+<!ATTLIST contenido Id ID #REQUIRED>
+<!-- Falta formato-->
+
+
+

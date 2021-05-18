@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="biblioteca.dtd" type="application/xml-dtd"?>
+<biblioteca>
+    <libro enlace="libro1.xml" />
+    <revista enlace="revista1.xml" />
+    <periodico enlace="periodico1.xml" />
+
+</biblioteca>

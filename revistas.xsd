@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="revista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="titulo" />
+        <xs:element ref="numero_Revista" />
+        <xs:element ref="indice" />
+        <xs:element ref="secciones" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="contenido" />
+      </xs:sequence>
+      <xs:attribute name="Id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:ID">
+            <xs:pattern value="[L][0-9]{4}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+        <xs:attribute name="tipo_clase" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="informática" />
+            <xs:enumeration value="corazón" />
+            <xs:enumeration value="coches" />
+            <xs:enumeration value="investigación" />
+            <xs:enumeration value="otras" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="numero_Paginas" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="titulo" type="xs:string" />
+  <xs:element name="numero_Revista" type="xs:integer" />
+  <xs:element name="numero_Paginas" type="xs:integer" />
+  <xs:element name="indice" type="xs:string" />
+  <xs:element name="secciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="seccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="seccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="contenido_Seccion" />
+      </xs:sequence>
+      <xs:attribute name="numero_Paginas" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contenido_Seccion">
+    <xs:complexType>
+      <xs:attribute name="enlace" type="xs:IDREF" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contenido_Revista">
+    <xs:complexType>
+      <xs:attribute name="enlace" type="xs:IDREF" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contenido">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="referencia" type="xs:string" use="required" />
+          <xs:attribute name="Id" type="xs:ID" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

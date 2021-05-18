@@ -1,0 +1,33 @@
+
+<!--
+Vamos a elaborar una estructura de base de datos en XML que permita almacenar los datos de una biblioteca en la red. Para ello se pide que elabores
+un DTD que permita validar los documentos XML con las siguientes características:
+Existen tres tipos de documentos almacenados en la biblioteca: libros, revistas y periódicos. Todos los documentos están identificados por el
+atributo Id.
+En el caso de las revistas empieza por la letra “R”.
+Las revistas a su vez son clasificadas en: informática, corazón, coches, investigación y otras. Cada revista tiene el atributo tipo_clase
+identificativo de la clase a la que pertenece. Dentro de cada revista tenemos el título, el número de la revista, un índice de contenido y las
+secciones. En cada sección y en la revista se tiene un atributo que contiene el número de páginas. Además, en cada sección se tiene la parte
+denominada contenido, en la que se tiene un atributo con un enlace a la información. De igual forma que en los anteriores, la última etiqueta
+del árbol debe ser el contenido con un atributo que referencia al contenido.
+-->
+
+<!ELEMENT revista (titulo,numero_Revista,indice,secciones,contenido+)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT numero_Revista (#PCDATA)>
+<!ELEMENT numero_Paginas (#PCDATA)>
+<!ELEMENT indice (#PCDATA)>
+<!ELEMENT secciones (seccion+)>
+<!ELEMENT seccion (contenido_Seccion)>
+<!ELEMENT contenido_Seccion EMPTY>
+<!ELEMENT contenido_Revista EMPTY> <!-- referencia a contenido-->
+<!ELEMENT contenido (#PCDATA) >
+
+<!ATTLIST revista Id ID #REQUIRED> <!-- Falta formato-->
+<!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED >
+<!ATTLIST revista numero_Paginas CDATA #REQUIRED >
+<!ATTLIST seccion numero_Paginas CDATA #REQUIRED >
+<!ATTLIST contenido_Seccion enlace IDREF #REQUIRED> <!-- referencia a contenido-->
+<!ATTLIST contenido_Revista enlace IDREF #REQUIRED> <!-- referencia a contenido-->
+<!ATTLIST contenido referencia CDATA #REQUIRED>
+<!ATTLIST contenido Id ID #REQUIRED>

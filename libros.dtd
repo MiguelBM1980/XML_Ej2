@@ -1,0 +1,28 @@
+<!--
+Vamos a elaborar una estructura de base de datos en XML que permita almacenar los datos de una biblioteca en la red. Para ello se pide que elabores
+un DTD que permita validar los documentos XML con las siguientes características:
+Existen tres tipos de documentos almacenados en la biblioteca: libros, revistas y periódicos. Todos los documentos están identificados por el
+atributo Id.
+Para los libros este atributo empieza con la letra “L” seguido de 4 dígitos identificativos.
+Los libros a su vez son clasificados en novela, infantil o didáctico. Cada libro contiene un atributo identificativo de su clase denominado
+tipo_clase. Dentro de cada libro se tiene un título, varios capítulos con el título en su interior, un índice y una sinopsis. Tanto en libro como en
+capítulo existe un atributo que contiene el número de páginas del libro o del capítulo, según corresponda. Cada capítulo contiene un
+elemento denominado contenido, en el que se tiene un atributo con el enlace a la información.
+-->
+<!ELEMENT libro (titulo,capitulos,contenidos)>
+<!ELEMENT capitulos (capitulo+)>
+<!ELEMENT capitulo (titulo,indice,sinopsis,contenido_Capitulo)>
+<!ELEMENT contenidos (contenido+)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT indice (#PCDATA) >
+<!ELEMENT sinopsis (#PCDATA) >
+<!ELEMENT contenido_Capitulo EMPTY >
+<!ELEMENT contenido (#PCDATA)>
+
+
+<!ATTLIST libro Id ID #REQUIRED> <!-- Falta formato-->
+<!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED>
+<!ATTLIST libro numero_paginas CDATA #REQUIRED>
+<!ATTLIST capitulo numero_paginas CDATA #REQUIRED>
+<!ATTLIST contenido_Capitulo enlace IDREF #REQUIRED>
+<!ATTLIST contenido Id ID #REQUIRED>

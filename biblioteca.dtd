@@ -1,0 +1,8 @@
+<!ELEMENT biblioteca (libro+, revista+, periodico+)>
+<!ELEMENT libro EMPTY>
+<!ELEMENT revista EMPTY>
+<!ELEMENT periodico EMPTY>
+
+<!ATTLIST libro enlace CDATA #REQUIRED>
+<!ATTLIST revista enlace CDATA #REQUIRED>
+<!ATTLIST periodico enlace CDATA #REQUIRED>

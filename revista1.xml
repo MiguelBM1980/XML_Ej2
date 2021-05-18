@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE revista SYSTEM "revistas.dtd">
+
+<revista Id="R001" tipo_clase ="otras" numero_Paginas="20">
+  <titulo></titulo>
+  <numero_Revista></numero_Revista>
+  <indice></indice>
+  <secciones>
+    <seccion numero_Paginas="2">
+      <contenido_Seccion enlace="asd"/>
+    </seccion>
+  </secciones>
+  <contenido referencia="dato externo" Id="asd"></contenido>
+    
+</revista>
+
+
+
