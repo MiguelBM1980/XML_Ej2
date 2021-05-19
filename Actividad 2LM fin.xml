@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE Blibioteca SYSTEM "Actividad%202LM.dtd">
 <!-- Inicio del XML EL nodo Raiz es Biblioteca. -->
 <Blibioteca>
             <Libro id= "L1234" numero_paginas="100" tipo_Clase="Novela"> 
                 
                     <titulo>El Codigo Da Vinci</titulo>
-                    <capitulos numero_paginas="10"></capitulos>
+                    <capitulos numero_paginas="10">
+                        <Contenido>Inventos</Contenido>
+                    </capitulos>
                     <Indice>Indice</Indice>
                     <Sinopsis>Sinopsis</Sinopsis>
             </Libro>

@@ -1,0 +1,89 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Blibioteca">
+    <xs:annotation>
+      <xs:documentation>Inicio del XML EL nodo Raiz es Biblioteca.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Libro" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="titulo"/>
+              <xs:element name="capitulos">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="Contenido" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:anyURI" name="enlace" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="numero_paginas" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="Indice"/>
+              <xs:element type="xs:string" name="Sinopsis"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="id" use="optional"/>
+            <xs:attribute type="xs:byte" name="numero_paginas" use="optional"/>
+            <xs:attribute type="xs:string" name="tipo_Clase" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Revista" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="titulo"/>
+              <xs:element type="xs:byte" name="numero"/>
+              <xs:element type="xs:string" name="indice"/>
+              <xs:element name="secciones">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:byte" name="numero_paginas" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="id" use="optional"/>
+            <xs:attribute type="xs:string" name="tipo_Clase" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Periodico">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Secciones" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Datos de Periodico.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Articulos">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="autor" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="Contenido"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="tipo_Seccion" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="indice"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="id"/>
+            <xs:attribute type="xs:string" name="tipo_Clase"/>
+            <xs:attribute type="xs:string" name="fecha"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
