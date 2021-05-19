@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!DOCTYPE biblioteca SYSTEM "Biblioteca_carlos.dtd">
 <biblioteca>
-
+(articulos | contenido_Seccion)
     <!--LIBROS-->
 <libros>
-    <libro id="L0001" tipo_clase="didactico" no_páginas="180">
+    <libro id="L0001" tipo_clase="didactico" no_paginas = "180">
         <titulo>Matemáticas aplicadas a las ciencias sociales</titulo>
         <capitulos>
-          <capitulo no_paginas="60">Capítulo 1 Ecuaciones
+          <capitulo no_paginas="60">
             <contenido enlace="http://www.numbers.com"></contenido>
           </capitulo>
-          <capitulo no_paginas="80">Capítulo 2 Derivadas
+          <capitulo no_paginas="80">
             <contenido enlace="http://www.matematicas.es"></contenido>
           </capitulo>
-          <capitulo no_paginas="40">Capítulo 3 Estadística y probabilidad
+          <capitulo no_paginas="40">
             <contenido enlace="http://matesbachillerato.es"></contenido>
           </capitulo>
         </capitulos>
@@ -21,16 +21,16 @@
         <sinopsis>Resumen</sinopsis>
     </libro>
 
-    <libro id="L0002" tipo_clase="novela" no_páginas="2000">
+    <libro id="L0002" tipo_clase="novela" no_paginas="2000">
         <titulo>Los pilares de la tierra</titulo>
         <capitulos>
-          <capitulo no_paginas="600">Capítulo 1 La construcción
+          <capitulo no_paginas="600">
             <contenido enlace="http://www.google.com"></contenido>
           </capitulo>
-          <capitulo no_paginas="700">Capítulo 2 El derrumbe
+          <capitulo no_paginas="700">
             <contenido enlace="http://www.google.es"></contenido>
           </capitulo>
-          <capitulo no_paginas="700">Capítulo 3 La reconstrucción
+          <capitulo no_paginas="700">
             <contenido enlace="http://www.google.uk"></contenido>
           </capitulo>
         </capitulos>
@@ -38,16 +38,16 @@
         <sinopsis>>Resumen</sinopsis>
     </libro>
 
-    <libro id="L0003" tipo_clase="infantil" no_páginas="20">
+    <libro id="L0003" tipo_clase="infantil" no_paginas="20">
         <titulo>La amiga más amiga de la hormiga Miga</titulo>
         <capitulos>
-          <capitulo no_paginas="7">Capítulo 1. Una hormiga
+          <capitulo no_paginas="7">
               <contenido enlace="http://www.librosinantiles.com"></contenido>
           </capitulo>
-          <capitulo no_paginas="6">Capítulo 2. Una amiga
+          <capitulo no_paginas="6">
             <contenido enlace="http://www.cuentosparaniños.es"></contenido>
           </capitulo>
-          <capitulo no_paginas="7">Capítulo 3. La mejor amiga
+          <capitulo no_paginas="7">
             <contenido enlace="http://www.elbarcodevapor.es"></contenido>
           </capitulo>
         </capitulos>
@@ -59,57 +59,57 @@
     <!--REVISTAS-->
 
 <revistas>
-    <revista id="R0001" tipo_clase="informatica" no_páginas="20">
+    <revista id="R0001" tipo_clase="informatica" no_paginas="20">
         <titulo>Computer hoy</titulo>
         <indice>Índice de contenido</indice>
         <numero>202</numero>
         <secciones>
-            <seccion no_paginas="10">Sección 1. Tecnología
-                <contenido link="http://https://computerhoy.com/tecnologia"></contenido>
+            <seccion no_paginas="10">
+                <contenido enlace="http://https://computerhoy.com/tecnologia"></contenido>
             </seccion>
-            <seccion no_paginas="10">Sección 2. Gaming
-                <contenido link="http://https://computerhoy.com/gaming"></contenido>
+            <seccion no_paginas="10">
+                <contenido enlace="http://https://computerhoy.com/gaming"></contenido>
              </seccion>
         </secciones>
     </revista>
 
-    <revista id="R0002" tipo_clase="coches" no_páginas="40">
+    <revista id="R0002" tipo_clase="coches" no_paginas="40">
         <titulo>Motor 16</titulo>
         <indice>Índice de contenido</indice>
         <numero>333</numero>
         <secciones>
-            <seccion no_paginas="20">Sección 1. Tecnología
-                <contenido link="http://https://motor16.es/novedades"></contenido>
+            <seccion no_paginas="20">
+                <contenido enlace="http://https://motor16.es/novedades"></contenido>
             </seccion>
-            <seccion no_paginas="20">Sección 2. Gaming
-                <contenido link="http://https://motor16.es/vintage"></contenido>
+            <seccion no_paginas="20">
+                <contenido enlace="http://https://motor16.es/vintage"></contenido>
              </seccion>
         </secciones>
     </revista>
 
-    <revista id="R0003" tipo_clase="corazon" no_páginas="27">
+    <revista id="R0003" tipo_clase="corazon" no_paginas="27">
         <titulo>Hola</titulo>
         <indice>Índice de contenido</indice>
         <numero>103</numero>
         <secciones>
-            <seccion no_paginas="17">Sección 1. Familia real
-                <contenido link="http://https://www.hola.es/familiareal"></contenido>
+            <seccion no_paginas="17">
+                <contenido enlace="http://https://www.hola.es/familiareal"></contenido>
             </seccion>
-            <seccion no_paginas="10">Sección 2. La dieta definitiva
-                <contenido link="http://https://www.hola.es/nutricion"></contenido>
+            <seccion no_paginas="10">
+                <contenido enlace="http://https://www.hola.es/nutricion"></contenido>
              </seccion>
         </secciones>
     </revista>
 
-    <revista id="R0004" tipo_clase="investigacion" no_páginas="60">
+    <revista id="R0004" tipo_clase="investigacion" no_paginas="60">
         <titulo>Springer</titulo>
         <indice>Índice de contenido</indice>
         <secciones>
-            <seccion no_paginas="30">Neurociencia 
-                <contenido link="https://www.springer.com/journal/426"></contenido>
+            <seccion no_paginas="30">
+                <contenido enlace="https://www.springer.com/journal/426"></contenido>
             </seccion>
-            <seccion no_paginas="30">Covid-19 y salud mental
-                <contenido link="https://www.springer.com/journal/426/updates/17818222"></contenido>
+            <seccion no_paginas="30">
+                <contenido enlace="https://www.springer.com/journal/426/updates/17818222"></contenido>
              </seccion>
         </secciones>
     </revista>
@@ -123,43 +123,26 @@
     <periodico id="P0001" tipo_clase="nacionales" fecha_publicacion="01/07/2013">
         <indice>Índice</indice>
         <secciones>
-            <seccion tipo_clase="economia">Sección 1. Economía 
-                <articulo autor="Sonia Vizoso">
-                    <contenido link="https://elpais.com/economia/2021-05-14/estrella-galicia-resiste-a-la-covid-sin-erte-ni-perdidas.html">Contenido Artículo Sonia Vizoso</contenido>
-                </articulo>
-                <articulo autor="Raymond Torres">
-                    <contenido link="https://elpais.com/economia/2021-05-11/a-punto-de-despegar.html">Contenido Artículo Raymond Torres</contenido>
-                </articulo>"
-            </seccion>
-            <seccion tipo_clase="opinion">Sección 2. Opinión 
-                <articulo autor="Haizam Fernández">
-                    <contenido link="https://elpais.com/opinion/2021-05-18/el-trilema-de-israel.html">Contenido Artículo Haizam Fernández</contenido>
-                </articulo>
-                <articulo autor="Francisco Ontañón">
-                    <contenido link="https://elpais.com/opinion/2021-05-18/memoria-de-un-viajero-26.html">Contenido Artículo Francisco Ontañón</contenido>
-                </articulo>"
-            </seccion>
-            <seccion tipo_clase="deportes">Sección 3. Deportes                  
+            <seccion tipo_clase="deportes">                
                 <articulo autor="Macarena Vidal">
-                    <contenido link="https://elpais.com/deportes/2021-05-18/japon-contra-tokio.html">Contenido Artículo Macarena Vidal</contenido>
+                    <contenido enlace="https://elpais.com/deportes/2021-05-18/japon-contra-tokio.html"></contenido>
                 </articulo> 
             </seccion>
-
-            <seccion tipo_clase="nacional">Sección 4. Nacional
+            <seccion tipo_clase="nacional">
                 <articulo autor="María García">
-                    <contenido link="https://elpais.com/espana/2021-05-18/el-ejercito-se-despliega-para-controlar-las-calles-de-ceuta-tras-la-entrada-de-5000-inmigrantes.html">Contenido Artículo María García</contenido>
+                    <contenido enlace="https://elpais.com/espana/2021-05-18/el-ejercito-se-despliega-para-controlar-las-calles-de-ceuta-tras-la-entrada-de-5000-inmigrantes.html"></contenido>
                 </articulo> 
             </seccion>
             <articulo autor="Ainhoa Campos"> 
-                <contenido link= "https://elpais.com/espana/2021-05-17/un-millar-de-personas-llegan-a-nado-a-ceuta-en-plena-escalada-de-tension-diplomatica-con-marruecos.html">Contenido Arttículo Ainhoa Campos</contenido>
+                <contenido enlace= "https://elpais.com/espana/2021-05-17/un-millar-de-personas-llegan-a-nado-a-ceuta-en-plena-escalada-de-tension-diplomatica-con-marruecos.html"></contenido>
             </articulo>
             
-            <seccion tipo_clase="internacional">Sección 5. Internacional
+            <seccion tipo_clase="internacional">
                 <articulo autor="Juan López">
-                    <contenido link="https://elpais.com/internacional/2021-05-18/un-triple-golpe-a-las-fabricas-las-escuelas-y-los-hospitales.html">Contenido Artículo Juan López</contenido>
+                    <contenido enlace="https://elpais.com/internacional/2021-05-18/un-triple-golpe-a-las-fabricas-las-escuelas-y-los-hospitales.html"></contenido>
                 </articulo> 
                 <articulo autor="Amanda Mars">
-                    <contenido link="https://elpais.com/internacional/2021-05-17/biden-defiende-el-alto-el-fuego-en-gaza-en-una-conversacion-con-netanyahu.html">Contenido Artículo Amanda Mars</contenido>
+                    <contenido enlace="https://elpais.com/internacional/2021-05-17/biden-defiende-el-alto-el-fuego-en-gaza-en-una-conversacion-con-netanyahu.html"></contenido>
                 </articulo> 
             </seccion>
         </secciones>
@@ -171,31 +154,30 @@
         <secciones>
             <seccion tipo_clase="economia">
                 <articulo autor="Jan Adams">
-                    <contenido link="https://www.nytimes.com/2021/05/18/business/economy/china-bank-debt-huarong.html">Contenido Artículo Jan Adams</contenido>
+                    <contenido enlace="https://www.nytimes.com/2021/05/18/business/economy/china-bank-debt-huarong.html"></contenido>
                 </articulo>
             </seccion>
-
             <seccion tipo_clase="opnion">
                 <articulo autor="Christopher Futterman">
-                    <contenido link="https://www.nytimes.com/2021/05/18/opinion/israel-palestinians-conflict-injuries-hospital.html">Contenido Artículo Christopher Futterman</contenido>
+                    <contenido enlace="https://www.nytimes.com/2021/05/18/opinion/israel-palestinians-conflict-injuries-hospital.html"></contenido>
                 </articulo>
             </seccion>
 
             <seccion tipo_clase="deportes">
                 <articulo autor="Talya Minsberg">
-                    <contenido link="https://www.nytimes.com/2021/05/18/business/economy/china-bank-debt-huarong.html">Contenido Artículo talya Minsberg</contenido>
+                    <contenido enlace="https://www.nytimes.com/2021/05/18/business/economy/china-bank-debt-huarong.html"></contenido>
                 </articulo>
             </seccion>
 
             <seccion tipo_clase="nacional">
                 <articulo autor="Hannah Smith">
-                    <contenido link="https://www.nytimes.com/video/us/politics/100000007769035/biden-ford-electric-vehicles-infrastructure.html">Contenido Artículo Hannah Smith</contenido>
+                    <contenido enlace="https://www.nytimes.com/video/us/politics/100000007769035/biden-ford-electric-vehicles-infrastructure.html"></contenido>
                 </articulo>
             </seccion>
 
             <seccion tipo_clase="internacional">
                 <articulo autor="Steven Erlanger">
-                    <contenido link="https://www.nytimes.com/2021/05/18/world/europe/europe-israel-palestinians-gaza-ceasefire.html">Contenido Artículo Steven Erlanger</contenido>
+                    <contenido enlace="https://www.nytimes.com/2021/05/18/world/europe/europe-israel-palestinians-gaza-ceasefire.html"></contenido>
                 </articulo>
             </seccion>
         </secciones>
