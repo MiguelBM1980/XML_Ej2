@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE Blibioteca SYSTEM "Actividad%202LM.dtd">
+<!-- Inicio del XML EL nodo Raiz es Biblioteca. -->
+<Blibioteca>
+            <Libro id= "L1234" numero_paginas="100" tipo_Clase="Novela"> 
+                
+                    <titulo>El Codigo Da Vinci</titulo>
+                    <capitulos numero_paginas="10">
+                        <Contenido>Inventos</Contenido>
+                    </capitulos>
+                    <Indice>Indice</Indice>
+                    <Sinopsis>Sinopsis</Sinopsis>
+            </Libro>
+            <Libro id= "L5678" numero_paginas="60" tipo_Clase="Infantil">
+                <titulo>Tres Sombreros de Copa</titulo>
+                <capitulos numero_paginas="15"></capitulos>
+                <Indice>Indice</Indice>
+                <Sinopsis>Sinopsis</Sinopsis>
+            </Libro>
+            <Libro id= "L91011" numero_paginas="75" tipo_Clase="Didactico">
+                <titulo>Aprende a Aprender</titulo>
+                <capitulos numero_paginas="20">El placer de Aprender
+
+                    <Contenido enlace="www. aprender.com"></Contenido>
+                </capitulos>
+                <Indice>Indice</Indice>
+                <Sinopsis>Sinopsis</Sinopsis>
+            </Libro>
+
+            <Revista id="R1234" tipo_Clase="Informatica">
+                <titulo>Que</titulo>
+                <numero>5</numero>
+                <indice>indice</indice>
+                <secciones>Secciones</secciones>
+            </Revista>
+            <Revista id="R5678" tipo_Clase="Corazon">
+                <titulo>Que</titulo>
+                <numero>5</numero>
+                <indice>indice</indice>
+                <secciones numero_paginas="75">Secciones</secciones>
+            </Revista>
+            <Revista id="R91011" tipo_Clase="Coches">
+                <titulo>Que</titulo>
+                <numero>5</numero>
+                <indice>indice</indice>
+                <secciones numero_paginas="75">Secciones</secciones>
+            </Revista>
+            <Revista id="R1213" tipo_Clase="Investigacion">
+                <titulo>Muy Interesante</titulo>
+                <numero>5</numero>
+                <indice>indice</indice>
+                <secciones numero_paginas="75">Secciones</secciones>
+            </Revista>
+            <Revista id="R1415" tipo_Clase="Otras">
+                <titulo>Caza y Pesca</titulo>
+                <numero>5</numero>
+                <indice>indice</indice>
+                <secciones numero_paginas="75">Secciones</secciones>
+            </Revista>
+    <Periodico id="P1234" tipo_Clase="Nacionales" fecha="25/04/2021">
+       <!-- Datos de Periodico. -->
+        <Secciones tipo_Seccion="económica">
+            <Articulos autor="Pepito"></Articulos>
+            <Contenido>Economia</Contenido>
+       </Secciones>
+       <Secciones tipo_Seccion="Opinión">
+            <Articulos autor="Manlito"></Articulos>
+            <Contenido>Opinion</Contenido>
+         </Secciones>
+         <Secciones tipo_Seccion="Deportes">
+            <Articulos autor="jorgito"></Articulos>
+            <Contenido>Deportes</Contenido>
+       </Secciones>
+       <Secciones tipo_Seccion="Nacional e Internacional">
+        <Articulos autor="Pepito y Manolito"></Articulos>
+        <Contenido>Nacional e Internaciona</Contenido>
+   </Secciones>
+        <indice></indice>
+    </Periodico>
+
+   
+</Blibioteca>
