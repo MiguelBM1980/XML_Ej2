@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE biblioteca SYSTEM "Biblioteca_carlos.dtd">
+
 <biblioteca>
-(articulos | contenido_Seccion)
+
     <!--LIBROS-->
+    
 <libros>
     <libro id="L0001" tipo_clase="didactico" no_paginas = "180">
         <titulo>Matemáticas aplicadas a las ciencias sociales</titulo>
