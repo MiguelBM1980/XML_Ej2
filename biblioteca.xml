@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="biblioteca.dtd" type="application/xml-dtd"?>
 <biblioteca>
-    <libro enlace="libro1.xml" />
-    <revista enlace="revista1.xml" />
-    <periodico enlace="periodico1.xml" />
+  <libros>
+    <libro Id="L0001" tipo_clase="novela" numero_paginas="20">
+      <titulo>cxz</titulo>
+      <capitulos>
+        <capitulo numero_paginas="5">
+          <titulo>cap1</titulo>
+          <indice>parte1</indice>
+          <sinopsis>ocurre muchas cosas</sinopsis>
+          <contenido_Capitulo enlace="adsdfaa"></contenido_Capitulo>
+        </capitulo>
+      </capitulos>
+      <contenidos>
+        <contenido Id ='adsdfaa'>texto super mega largo</contenido>
+      </contenidos>
+    </libro>
+  </libros>
+  <revistas>
+    <revista Id="R001" tipo_clase ="otras" numero_Paginas="20">
+      <titulo></titulo>
+      <numero_Revista></numero_Revista>
+      <indice></indice>
+      <secciones>
+        <seccion numero_Paginas="2">
+          <contenido_Seccion enlace="asd"/>
+        </seccion>
+      </secciones>
+      <contenido referencia="dato externo" Id="asd"></contenido>
+
+    </revista>
+  </revistas>
+  <periodicos>
+    <periodico Id ='P0001' tipo_clase='nacionales' fecha_publicacion='10/05/2021'>
+      <indice>asdfsafdsa</indice>
+      <secciones>
+        <seccion tipo = 'opinión'>
+          <articulos>
+            <articulo enlace='dasf'></articulo>
+          </articulos>
+        </seccion>
+      </secciones>
+      <contenido enlace='sadf' Id = 'dasf'></contenido>
+    </periodico>
+  </periodicos>
 
 </biblioteca>

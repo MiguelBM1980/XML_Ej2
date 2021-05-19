@@ -1,8 +1,66 @@
-<!ELEMENT biblioteca (libro+, revista+, periodico+)>
-<!ELEMENT libro EMPTY>
-<!ELEMENT revista EMPTY>
-<!ELEMENT periodico EMPTY>
+<!-- Parte general del documento -->
+<!ELEMENT biblioteca (libros, revistas, periodicos)>
+<!ELEMENT libros (libro+)>
+<!ELEMENT revistas (revista+)>
+<!ELEMENT periodicos (periodico+)>
 
-<!ATTLIST libro enlace CDATA #REQUIRED>
-<!ATTLIST revista enlace CDATA #REQUIRED>
-<!ATTLIST periodico enlace CDATA #REQUIRED>
+<!-- Estructura de los libros -->
+<!-- Elementos -->
+<!ELEMENT libro (titulo,capitulos,contenidos)>
+<!ELEMENT capitulos (capitulo+)>
+<!ELEMENT capitulo (titulo,indice,sinopsis,contenido_Capitulo)>
+<!ELEMENT contenidos (contenido+)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT indice (#PCDATA) >
+<!ELEMENT sinopsis (#PCDATA) >
+<!ELEMENT contenido_Capitulo EMPTY >
+<!ELEMENT contenido (#PCDATA)>
+<!-- atributos -->
+<!ATTLIST libro Id ID #REQUIRED>
+<!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED>
+<!ATTLIST libro numero_paginas CDATA #REQUIRED>
+<!ATTLIST capitulo numero_paginas CDATA #REQUIRED>
+<!ATTLIST contenido_Capitulo enlace IDREF #REQUIRED>
+<!ATTLIST contenido Id ID #REQUIRED>
+
+
+
+<!-- Estructura de los periodicos -->
+<!-- Elementos -->
+<!ELEMENT periodico (indice,secciones,contenido+) >
+<!ELEMENT secciones (seccion+) >
+<!ELEMENT seccion (articulos | contenido_Seccion) > <!-- articulos es para periodicos y contenido_Seccion de revistas-->
+<!ELEMENT articulos (articulo+) >
+<!ELEMENT articulo (#PCDATA)>
+
+<!-- atributos -->
+<!ATTLIST periodico Id ID #REQUIRED>
+<!ATTLIST periodico tipo_clase (nacionales | internacionales) #REQUIRED>
+<!ATTLIST periodico fecha_publicacion CDATA #REQUIRED >
+<!ATTLIST seccion tipo (económica | opinión | deportes | nacional | internacional) #REQUIRED>
+<!ATTLIST articulo enlace IDREF #REQUIRED>
+<!ATTLIST contenido enlace CDATA #REQUIRED>
+
+
+
+
+<!-- Estructura de las revistas -->
+<!-- Elementos -->
+<!ELEMENT revista (titulo,numero_Revista,indice,secciones,contenido+)>
+<!ELEMENT numero_Revista (#PCDATA)>
+<!ELEMENT numero_Paginas (#PCDATA)>
+<!ELEMENT contenido_Seccion EMPTY >
+<!ELEMENT contenido_Revista EMPTY> <!-- referencia a contenido-->
+<!ELEMENT revista.contenido (#PCDATA) >
+
+<!-- atributos -->
+<!ATTLIST revista Id ID #REQUIRED> <!-- Falta formato-->
+<!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED >
+<!ATTLIST revista numero_Paginas CDATA #REQUIRED >
+<!ATTLIST revista.seccion numero_Paginas CDATA #REQUIRED >
+<!ATTLIST contenido_Seccion enlace IDREF #REQUIRED> <!-- referencia a contenido-->
+<!ATTLIST contenido_Revista enlace IDREF #REQUIRED> <!-- referencia a contenido-->
+<!ATTLIST contenido referencia CDATA #IMPLIED>
+
+
+

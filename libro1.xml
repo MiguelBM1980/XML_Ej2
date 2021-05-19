@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE libro SYSTEM "libros.dtd">
-<libro Id="L0001" tipo_clase="novela" numero_paginas="2"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<libro Id="L0001" tipo_clase="novela" numero_paginas="20"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:noNamespaceSchemaLocation= "libros.xsd">
     <titulo>cxz</titulo>
     <capitulos>
         <capitulo numero_paginas="5">
-            <titulo></titulo>
-            <indice></indice>
-            <sinopsis></sinopsis>
+            <titulo>cap1</titulo>
+            <indice>parte1</indice>
+            <sinopsis>ocurre muchas cosas</sinopsis>
           <contenido_Capitulo enlace="adsdfaa"></contenido_Capitulo>
         </capitulo>
     </capitulos>
   <contenidos>
-    <contenido Id ='adsdfaa'>fafdas</contenido>
+    <contenido Id ='adsdfaa'>texto super mega largo</contenido>
   </contenidos>
 </libro>
