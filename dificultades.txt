@@ -1,0 +1,6 @@
+Para empezar hice los libros, periodicos y revistas por separados tratando de seguir las especificaciones del enunciado.
+Una vez que tuve tanto los xml, dtd y xsl por separado, hice lo mismo para la biblioteca sin incluirlos.
+Cuando tuve todo realizado sin fallos, integre los archivos de los libros, periodicos y revistas en los correspondientes de la biblioteca.
+Al copiarlo tal cual me dio vários errores al tener vários elementos y atributos repetidos y que al estar en otros elementos se interferian entre ellos,
+en algunos casos tuve de eliminarlos de los archivos dtd y xsl y colocar los xsl de los libros,revistas y periodicos
+dentro de sus elementos de la biblioteca.
