@@ -1,0 +1,53 @@
+<!ELEMENT biblioteca (libros|revistas|periodicos)*>
+
+        <!-- Estructura de los libros-->
+
+        <!ELEMENT libros (libro)*>
+        <!ELEMENT libro (titulo|capitulos|indice|sinopsis)*>
+        <!ATTLIST libro
+                id CDATA #REQUIRED
+                no_paginas CDATA #REQUIRED
+                tipo_clase CDATA #REQUIRED>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT capitulos (capitulo)*>
+        <!ELEMENT capitulo (contenido)*>
+        <!ATTLIST capitulo
+                no_paginas CDATA #REQUIRED>
+        <!ELEMENT contenido (#PCDATA)>
+        <!ATTLIST contenido
+                enlace CDATA #REQUIRED>
+        <!ELEMENT indice (#PCDATA)>
+        <!ELEMENT sinopsis (#PCDATA)>
+
+        <!-- Estructura de las revistas-->
+
+        <!ELEMENT revistas (revista)*>
+        <!ELEMENT revista (titulo|indice|numero|secciones)*>
+        <!ATTLIST revista
+                id CDATA #REQUIRED
+                no_paginas CDATA #REQUIRED
+                tipo_clase CDATA #REQUIRED>
+        <!ELEMENT numero (#PCDATA)>
+        <!ELEMENT secciones (seccion|articulo)*>
+        <!ELEMENT seccion (contenido|articulo)*>
+        <!ATTLIST seccion
+                no_paginas CDATA #IMPLIED>
+
+        <!-- Estructura de los periódicos-->
+        <!ELEMENT periodicos (periodico)*>
+        <!ELEMENT periodico (indice|secciones)*>
+        <!ATTLIST periodico
+                fecha_publicacion CDATA #REQUIRED
+                id CDATA #REQUIRED
+                tipo_clase CDATA #REQUIRED>
+        <!ELEMENT indice (#PCDATA)>
+        <!ELEMENT secciones (seccion|articulo)*>
+        <!ELEMENT seccion (articulo|contenido)*>
+        <!ATTLIST seccion
+                tipo_clase CDATA #REQUIRED>
+        <!ELEMENT articulo (contenido)*>
+        <!ATTLIST articulo
+                autor CDATA #REQUIRED>
+        <!ELEMENT contenido (#PCDATA)>
+        <!ATTLIST contenido
+                enlace CDATA #REQUIRED>
