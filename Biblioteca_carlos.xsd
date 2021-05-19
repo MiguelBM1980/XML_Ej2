@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="biblioteca" type="bibliotecaType"/>
+  <xs:complexType name="contenidoType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="enlace" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="capituloType">
+    <xs:sequence>
+      <xs:element type="contenidoType" name="contenido"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="no_paginas" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="capitulosType">
+    <xs:sequence>
+      <xs:element type="capituloType" name="capitulo" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="libroType">
+    <xs:sequence>
+      <xs:element name="titulo">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Matemáticas aplicadas a las ciencias sociales"/>
+            <xs:enumeration value="Los pilares de la tierra"/>
+            <xs:enumeration value="La amiga más amiga de la hormiga Miga"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="capitulosType" name="capitulos"/>
+      <xs:element name="indice">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Unidades didácticas"/>
+            <xs:enumeration value="Índice"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="sinopsis">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Resumen"/>
+            <xs:enumeration value=">Resumen"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="tipo_clase" use="optional"/>
+    <xs:attribute type="xs:string" name="no_paginas" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="librosType">
+    <xs:sequence>
+      <xs:element type="libroType" name="libro" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="seccionType">
+    <xs:sequence>
+      <xs:element type="contenidoType" name="contenido" minOccurs="0"/>
+      <xs:element type="articuloType" name="articulo" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="no_paginas" use="optional"/>
+    <xs:attribute type="xs:string" name="tipo_clase" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="seccionesType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="seccionType" name="seccion"/>
+      <xs:element type="articuloType" name="articulo"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="revistaType">
+    <xs:sequence>
+      <xs:element name="titulo">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Computer hoy"/>
+            <xs:enumeration value="Motor 16"/>
+            <xs:enumeration value="Hola"/>
+            <xs:enumeration value="Springer"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="indice"/>
+      <xs:element name="numero" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="202"/>
+            <xs:enumeration value="333"/>
+            <xs:enumeration value="103"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="seccionesType" name="secciones"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="tipo_clase" use="optional"/>
+    <xs:attribute type="xs:string" name="no_paginas" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="revistasType">
+    <xs:sequence>
+      <xs:element type="revistaType" name="revista" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="articuloType">
+    <xs:sequence>
+      <xs:element type="contenidoType" name="contenido" minOccurs="0"/>
+      <xs:element type="articuloType" name="articulo" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="autor" use="optional"/>
+    <xs:attribute type="xs:string" name="no_paginas" use="optional"/>
+    <xs:attribute type="xs:string" name="tipo_clase" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="periodicoType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="indice"/>
+      <xs:element type="seccionesType" name="secciones"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="tipo_clase" use="optional"/>
+    <xs:attribute type="xs:string" name="fecha_publicacion" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="periodicosType">
+    <xs:sequence>
+      <xs:element type="periodicoType" name="periodico" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bibliotecaType">
+    <xs:sequence>
+      <xs:element type="librosType" name="libros">
+        <xs:annotation>
+          <xs:documentation>LIBROS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="revistasType" name="revistas">
+        <xs:annotation>
+          <xs:documentation>REVISTAS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="periodicosType" name="periodicos">
+        <xs:annotation>
+          <xs:documentation>PERIÓDICOS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
